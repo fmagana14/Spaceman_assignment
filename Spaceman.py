@@ -101,7 +101,7 @@ def spaceman(secret_word):
             print("Use a different letter")
         else:
             if is_guess_in_word(answer, secret_word):
-                print("Nice job!")
+                print("Nice!")
                 letter_guess.append(answer)
             else:
                 guesses -= 1
