@@ -93,7 +93,33 @@ def spaceman(secret_word):
       secret_word (string): the secret word to guess.
 
     '''
+ print('Type any letter to guess the secret word')
 
+           
+
+        if answer in letter_guess:
+            print("Use a different letter")
+        else:
+            if is_guess_in_word(answer, secret_word):
+                print("Nice job!")
+                letter_guess.append(answer)
+            else:
+                guesses -= 1
+                print("Try again! You have {guesses}")
+
+            print(get_guessed_word(secret_word, letter_guess))
+            alphabet.remove(answer)
+            print ("{', '.join(alphabet)}")
+
+            # #TODO: check if the game has been won or lost       
+        
+        if guesses <= 0:
+                print("You Lose! The word was: {secret_word}")
+                playing = False
+
+        if is_word_guessed(secret_word, letter_guess):
+                print('Awesome, you win! The word was {secret_word}')
+                playing = False
 
     #TODO: show the player information about the game according to the project spec
 
